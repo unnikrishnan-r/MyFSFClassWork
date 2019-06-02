@@ -7,7 +7,6 @@
   text-align: center;
   font-size: 30px;
   margin: 0;
-  background-color: aqua;
 
 }
 
@@ -16,7 +15,6 @@ header {
   height:100px;
   padding:25px;
   background: #ccc;
-  border: 1px solid blue;
   margin-bottom: 20px;
 }
 
@@ -25,7 +23,6 @@ footer {
   height:100px;
   padding: 25px;
   background: #ccc;
-  border: 1px solid blue;
   position: absolute;
   bottom: 0%;
 }
@@ -33,33 +30,31 @@ footer {
 section {
   height: 100px;
   padding: 25px;
-  border: 1px solid green;
   background: beige;
-  color: red;
   margin-bottom: 20px;
 
 }
 
 #left {
-  background-color: darkgray;
+  background-color: #888;
   float: left;
   width: 33.33%;
 }
 
 #middle {
-  background-color: yellowgreen;
+  background-color: #666;
   float: left;
   width: 33.33%;
 }
 
 #right {
-  background-color: darkgray;
+  background-color: #888;
   float: left;
   width: 33.33%;
 }
 
 #full {
-  background-color: beige;
+  background-color: #eee;
   float: left;
   width:100%;
   height:325px;
@@ -74,7 +69,7 @@ section {
 }
 
 #division {
-  background-color: lightcoral;
+  background-color: #6ea3da;
   width:98%;
   height:100px;
   padding:25px;
@@ -93,7 +88,6 @@ section {
 }
 
 aside {
-  border: solid green;
   width: 25%;
   height: 100%;
   background-color: white;
