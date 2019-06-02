@@ -27,49 +27,55 @@ section {
 #left {
   background-color: darkgray;
   float: left;
-  border: solid green;
   width: 33%;
   padding: 1cm;
   color:white;
+  margin-bottom: 25px;
 }
 
 #middle {
   background-color: lightgray;
   float: left;
-  border: solid green;
   width: 33%;
   padding: 1cm;
   color:white;
+  margin-bottom: 25px;
 }
 
 #right {
   background-color: darkgray;
   float: left;
-  border: solid green;
   width: 34%;
   padding: 1cm;
   color:white;
+  margin-bottom: 25px;
 }
 
 #full {
-  border: solid green;
-
+  background-color: beige;
+  padding: 60px;
+  position: relative;
+  top:145px;
+  text-align: end;
+  
 }
 
 #division {
-  border: solid green;
-  background-color: blue;
-padding-top: 20px;
-padding-bottom: 20px;
+  background-color: lightcoral;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: inherit;
+  margin: 0 ;
 }
 
 aside {
   border: solid green;
+  width: 25%;
+  background-color: white;
 
 }
 
 footer {
-  border: solid green;
   bottom: 0;
   width: 100%;
   position: absolute;
