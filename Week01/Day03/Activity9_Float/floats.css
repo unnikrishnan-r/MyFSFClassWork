@@ -54,6 +54,8 @@ section {
 }
 
 #full {
+  clear:both;
+  overflow: auto;
   background-color: #eee;
   float: left;
   width:100%;
