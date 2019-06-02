@@ -82,6 +82,8 @@ section {
   left:14px;
   top:50%;
   margin: 0;
+  background-position: 100%;
+
 }
 
 #div-text{
@@ -89,16 +91,12 @@ section {
   left:61%;
   background-color: inherit;
 }
-/*
-
-
-/*
 
 aside {
   border: solid green;
   width: 25%;
+  height: 100%;
   background-color: white;
-
+  position: relative;
+  left:30px;
 }
-
-*/
