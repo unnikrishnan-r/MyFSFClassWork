@@ -1,0 +1,26 @@
+/**
+ * Google Fonts Demo
+ **/
+
+/* Add in the Google Fonts of your choice */
+*{
+    font-family: 'Merriweather', serif;
+}
+
+h3{
+    font-family: 'Indie Flower', cursive;
+    font-size: 25px;
+
+}
+
+p{
+    font-family: 'Ruge Boogie', cursive;
+
+    line-height: 30px;
+
+}
+
+.icon
+{
+    color: orange;
+font-size: 150px;}
