@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Steak or Tofu?</title>
+</head>
+
+<body>
+    <script>
+        var doYouLikeSteak = confirm("Do you like Steak?");
+
+        // Check if user likes steak
+        if (doYouLikeSteak) {
+            // If user likes Steak, check if is 21 years or above
+            var ageOfUser = prompt("What is your age?");
+            if (ageOfUser < 21) {
+                alert("Under age, no steak sandwich for you!");
+                document.write("Under age, no steak sandwich for you!");
+            }
+            else {
+                alert("Here is a steak sandwich");
+                document.write("here is a steak sandwich");
+            }
+        }
+        // user does not like Steak
+        else {
+            alert("here is a Tofu fry");
+            document.write("here is a tofu fry");
+        }
+
+    </script>
+</body>
+
+</html>
