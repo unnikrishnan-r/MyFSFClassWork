@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bootcamp Objects</title>
+</head>
+
+<body>
+    <script>
+        var bootCamp = {
+            Week1: [
+                day1 = {
+                    topics: "The Zen of Coding",
+                    instructor: "Uzair",
+                },
+                day2 = {
+                    topics: "Session 1.2 Git'n Pro with HTML/CSS",
+                    instructor: "Uzair",
+                },
+                day3 = {
+                    topics: "Web Be Styling",
+                    instructor: "Uzair",
+                }
+            ],
+            Week3: [
+                day1 = {
+                    topics: "Joys of Javascript",
+                    instructor: "Angelo",
+                },
+                day2 = {
+                    topics: "Jumping for Javascript",
+                    instructor: "Angelo",
+                },
+                day3 = {
+                    topics: "Javascript Juggernaughts",
+                    instructor: "Angelo",
+                }
+            ]
+        }
+        //Who taught what on Day 3 of Week 1
+        console.log(bootCamp.Week1[2].instructor + " taught " + bootCamp.Week1[2].topics);
+
+        //Who taught what on Day 2 of Week 3
+        console.log(bootCamp.Week3[1].instructor + " taught " + bootCamp.Week3[1].topics);
+
+    </script>
+
+</body>
+
+</html>

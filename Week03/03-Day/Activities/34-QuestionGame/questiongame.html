@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Question Game</title>
+</head>
+
+<body>
+
+    <script>
+        var questionList = [
+            One = {q: "QUESTION", a: true},
+            Two = {q: "QUESTION1", a: false},
+            Three = {q: "QUESTION2", a: false},
+            Four = {q: "QUESTION3", a: true},
+            Five = {q: "QUESTION4", a: false},
+            Six = {q: "QUESTION5", a: false},
+            Seven = {q: "QUESTION6", a: true},
+            Eight = {q: "QUESTION7", a: false},
+            Nine = {q: "QUESTION8", a: false},
+            Ten = {q: "QUESTION9", a: false},
+        ]
+
+        var answerList =[];
+        var userKey;
+        console.log(questionList[0].q);
+        console.log(questionList[1].a);
+
+        for(i=0 ; i<questionList.length;i++){
+            alert(questionList[i].q);
+            document.onkeyup = function (event) {
+                userKey = event.key; 
+                answerList.push(userKey);
+                console.log(answerList[0]);
+            }
+
+        }
+        console.log(answerList);
+    </script>
+
+</body>
+
+</html>

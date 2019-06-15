@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>My First Function</title>
+</head>
+
+<body>
+
+  <h1>Open the console to see the magic!</h1>
+
+  <script>
+    // FUNCTIONS
+    // ================================================================================
+
+    // Create a Function called "adder" that take three arguments (x, y, z).
+    // The function should add the arguments together, and log the result to the console.
+    function adder(x, y, z) {
+      console.log("Beginning execution of function:" + adder.name);
+      console.log("Value of x is:" + x);
+      console.log("Value of y is:" + y);
+      console.log("Value of z is:" + z);
+
+      var sum = x + y + z;
+      console.log("Sum of x, y, z is :" + sum);
+    }
+
+    // Create a Function called "multiplier" that takes three arguments (x, y, z).
+    // The function should multiply the arguments, and log the result to the console.
+    function multiplier(x, y, z) {
+      console.log("Beginning execution of function:" + multiplier.name);
+      console.log("Value of x is:" + x);
+      console.log("Value of y is:" + y);
+      console.log("Value of z is:" + z);
+      var product = x * y * z;
+      console.log("Product of x, y, z is :" + product);
+
+    }
+
+    // Create a Function called "isString" that takes three arguments (x, y, z).
+    // "isString" determines if all three arguments are strings and logs an appropriate response to the console.
+    function isString(x, y, z) {
+      console.log("Beginning execution of function:" + isString.name);
+      console.log("Value of x is:" + x);
+      console.log("X is of type :" + typeof (x));
+      console.log("Value of y is:" + y);
+      console.log("Y is of type :" + typeof (y));
+      console.log("Value of z is:" + z);
+      console.log("Z is of type :" + typeof (z));
+
+    }
+
+    // Create a Function called "vowelChecker" that takes in a single argument (x).
+    // "vowlChecker" logs whether or not the input is a vowel.
+    function vowlChecker(x) {
+      console.log("Beginning execution of function:" + vowlChecker.name);
+      console.log("Value of x is:" + x);
+      // if (x === "a" || x === "e" || x === "i" || x === "o" || x === "u") {
+      //   console.log(['a','e','i','o','u'].indexOf(x));
+      //   console.log("x is a Vowel")
+      // } else {
+      //   console.log(['a','e','i','o','u'].indexOf(x));
+      //   console.log("x is not a Vowel")
+      // }
+
+      if (['a', 'e', 'i', 'o', 'u'].indexOf(x) === -1) {
+        console.log("x is not a Vowel")
+      } else {
+        console.log("x is a Vowel")
+
+      }
+    }
+
+    // BONUS
+    // Creates a version of "adder" that returns its result. Function is called "adderReturn".
+    function adderReturn(x, y, z) {
+      console.log("Beginning execution of function:" + adderReturn.name);
+      var sum = x + y + z;
+      return sum;
+    }
+
+    // Creates a version of "multiplier" that returns its result. Function is called "multiplierReturn".
+    function multiplierReturn(x, y, z) {
+      console.log("Beginning execution of function:" + multiplierReturn.name);
+      var product = x * y * z;
+      return product;
+
+    }
+
+    // FUNCTION EXECUTION
+    // ================================================================================
+
+    // Add in the lines of code below necessary to call the functions we created above.
+
+
+    // Call the adder function here.
+    adder(1, 2, "3");
+
+
+    console.log("-------------------");
+
+
+    // Call the multiplier function here.
+    multiplier(1, 2, "4");
+
+    console.log("-------------------");
+
+
+    // Call the isString function here.
+    isString(1, "b", false);
+
+    console.log("-------------------");
+
+
+    // Call the vowelChecker function here.
+    vowlChecker("o");
+    vowlChecker("b");
+
+    console.log("-------------------");
+
+
+    // BONUS
+    // Call the adderReturn function here and set it equal to a variable. Then log that variable to the console.
+
+    console.log("Returned from adderReturn:" + adderReturn(4, 5, 6));
+    console.log("-------------------");
+
+
+    // Call the multiplierReturn function here and set it equal to a variable. Then log that variable to the console.
+    console.log("Returned from multiplierReturn:" + multiplierReturn(4, 5, 6));
+    console.log("-------------------");
+  </script>
+
+</body>
+
+</html>
