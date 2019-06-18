@@ -10,35 +10,114 @@
 
 <body>
 
+    <div>
+        <p> Here is your questions, press t - True ; f - False to answer</p>
+        <p> <span id="questionNumber"> </span>: <span id="questionText"></span></p>
+        <br>
+        <p> You answered: <span id="userAnswer"></span></p>
+
+        <p> Total Wins: <span id="winstext"></span></p>
+        <p> Total Losses: <span id="losstext"></span></p>
+
+        <p id="gameover"> </p>
+
+    </div>
     <script>
         var questionList = [
-            One = {q: "QUESTION", a: true},
-            Two = {q: "QUESTION1", a: false},
-            Three = {q: "QUESTION2", a: false},
-            Four = {q: "QUESTION3", a: true},
-            Five = {q: "QUESTION4", a: false},
-            Six = {q: "QUESTION5", a: false},
-            Seven = {q: "QUESTION6", a: true},
-            Eight = {q: "QUESTION7", a: false},
-            Nine = {q: "QUESTION8", a: false},
-            Ten = {q: "QUESTION9", a: false},
+            One = {
+                q: "Obama is the current president of USA",
+                a: false
+            },
+            Two = {
+                q: "China has the largest population",
+                a: true
+            },
+            Three = {
+                q: "Texas is in India",
+                a: false
+            },
+            Four = {
+                q: "Kawhi played for San Antonio before coming to Toronto",
+                a: true
+            },
+            Five = {
+                q: "Toroto is in British Columbia",
+                a: false
+            }
         ]
 
-        var answerList =[];
-        var userKey;
-        console.log(questionList[0].q);
-        console.log(questionList[1].a);
+        var questionNumber = document.getElementById("questionNumber");
+        var questionText = document.getElementById("questionText");
+        var answer;
+        var isAnswerCorrect = false;
+        var winstext = document.getElementById("winstext");
+        var losstext = document.getElementById("losstext");
+        var winCounter = 0;
+        var lossCounter = 0;
 
-        for(i=0 ; i<questionList.length;i++){
-            alert(questionList[i].q);
-            document.onkeyup = function (event) {
-                userKey = event.key; 
-                answerList.push(userKey);
-                console.log(answerList[0]);
+
+        //Functions
+        function askQuestion(number) {
+            if (number+1<= questionList.length) {
+                questionNumber.textContent = number + 1;
+                questionText.textContent = questionList[number].q;
             }
+            else{
+                document.querySelector("#gameover").innerHTML = "Game Over!";
 
+            }
         }
-        console.log(answerList);
+
+        function displayUserAnswer(x) {
+            if (x === 't') {
+                answer = true;
+            } else {
+                answer = false;
+            }
+        }
+
+        function updateScore() {
+            if (isAnswerCorrect) {
+                winCounter++;
+                winstext.textContent = winCounter;
+            } else {
+                lossCounter++;
+                losstext.textContent = lossCounter;
+            }
+        }
+
+
+        //Ask Question...
+        var number = 0;
+        askQuestion(number);
+        //Capture user response
+        document.onkeyup = function (event) {
+            console.log(event.key.toLowerCase());
+            console.log(event.key);
+            if (number === questionList.length) {
+                return;
+            }
+            displayUserAnswer(event.key.toLowerCase());
+            //If user did not enter T or F, alert till T or F was received
+
+            //At this point user entered T or F, compare with answer
+            if (answer === questionList[number].a) {
+                alert("Correct Answer");
+                isAnswerCorrect = true;
+            } else {
+                alert("Wrong Answer");
+                isAnswerCorrect = false;
+            }
+            console.log("Calling update Score fn");
+            updateScore();
+            number++;
+            askQuestion(number);
+        }
+
+
+        //If Correct answer, throw alert saying Correct Answer and Update Wins
+
+        //If incorrect answer, throw alert and Update Losses
     </script>
 
 </body>
