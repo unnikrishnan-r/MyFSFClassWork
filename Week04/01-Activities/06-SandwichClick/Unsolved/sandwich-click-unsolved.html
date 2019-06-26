@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Trigger Clicked</title>
+
+  <!-- Added link to the jQuery Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+  <h1>Click to Eat Sandwich</h1>
+  <h3 id="pbj">Peanut Butter Jelly</h3>
+  <h3 id="grilledcheese">Grilled Cheese</h3>
+  <h3 id="roastbeef">Roast Beef</h3>
+
+  <script type="text/javascript">
+    // This document.ready isn't necessary in this example... but is needed in cases where the HTML is complex.
+    // This code makes sure that the JavaScript doesn't get run until the HTML is finished loading
+    // It's useful to become familiar with now.
+
+    $(document).ready(function () {
+
+      // VARIABLES
+      // ====================================================================
+      // Here we create variables for tracking the number of sandwiches eaten
+      // ...
+      var pbjCounter = 0;
+      var grilledcheeseCounter = 0;
+      var roastbeefCounter = 0;
+      var newDiv;
+      // ...
+
+      // FUNCTIONS
+      // ====================================================================
+      // Here we create various on "click" functions which capture the clicks
+      // Inside each click event is the code to create an alert, update the counter, then show the updated count.
+      // ...
+      $("#pbj").on("click", function () {
+        alert("You Clicked Peanut Butter");
+        pbjCounter++;
+        if (pbjCounter > 1) {
+          alert("You have eaten " + pbjCounter + " Peanut Butter Jelly")
+        }
+      })
+
+
+      $("#grilledcheese").on("click", function () {
+        alert("You really like Grilled Cheese!");
+        grilledcheeseCounter++;
+        $('body').append($('<img id="grilledcheese" src="https://cdn.cpnscdn.com/static.coupons.com/ext/kitchme/images/recipes/600x400/grilled-cheese-sandwich_770.jpg"/>'));
+        if (grilledcheeseCounter > 1) {
+          alert("You have eaten " + grilledcheeseCounter + " Grilled Cheese")
+        }
+      })
+
+      $("#roastbeed").on("click", function () {
+        alert("woooo Roast Beef!");
+        roastbeefCounter++;
+        if (roastbeefCounter > 1) {
+          alert("You have eaten " + grilledcheeseCounter + " Roast Beef")
+        }
+      })
+
+      // ...
+
+    });
+  </script>
+
+</body>
+
+</html>

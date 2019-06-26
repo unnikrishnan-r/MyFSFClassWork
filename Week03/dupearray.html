@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Handle Dupe Arrays</title>
+</head>
+<body>
+
+    <h1> Open Console</h1>
+
+    <script>
+    var originalWord = [];
+    var letterE = 'e';
+    for (var i = 0; i < "cheetah".length ; i++){
+        originalWord.push("cheetah".charAt(i));
+    }
+    console.log(originalWord);
+    var positionOfE = originalWord.indexOf('e');
+    console.log(positionOfE);
+    originalWord[positionOfE] = '@';
+    console.log(originalWord);
+    positionOfE = originalWord.indexOf('e');
+    console.log(positionOfE);
+
+
+    </script>
+    
+</body>
+</html>
