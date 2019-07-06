@@ -33,12 +33,16 @@
     $("#resume").on("click", run);
 
     function run() {
+      clearInterval (intervalId);
       intervalId = setInterval(decrement, 1000);
+      console.log(intervalId);
     }
 
     function decrement() {
 
       number--;
+      console.log(intervalId);
+
 
       $("#show-number").html("<h2>" + number + "</h2>");
 
