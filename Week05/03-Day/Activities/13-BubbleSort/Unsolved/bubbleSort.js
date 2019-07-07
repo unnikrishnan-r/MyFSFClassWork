@@ -67,20 +67,82 @@ var unsortedArr = [
   181, 485, 495, 81, 169, 294, 79, 400, 92, 104, 249
 ];
 
-for (var j = 0; j < unsortedArr.length; j++) {
-  var swapped = false;
-  for (var i = 0; i < unsortedArr.length - 1; i++) {
-    if (unsortedArr[i] > unsortedArr[i + 1]) {
-      var a = unsortedArr[i];
-      var b = unsortedArr[i + 1];
-      [unsortedArr[i], unsortedArr[i + 1]] = [b, a];
-      swapped = true;
+
+function wait(ms){
+  console.log ("Begin Wait")
+  var start = new Date().getTime();
+  var end = start;
+  while(end < start + ms) {
+    end = new Date().getTime();
+ }
+ console.log("End Wait")
+}
+
+// function bubbleSort(array) {
+//   var swapped = true;
+//   for (var j = 0; swapped; j++) {
+//     console.log("Pass # +" + j);
+//     swapped = false;
+//     for (var i = 0; i < (array.length - 1-j); i++) {
+//       // console.log("Test") ;
+//       if (array[i] > array[i + 1]) {
+//         [array[i], array[i + 1]] = [array[i + 1], array[i]];
+//         swapped = true;
+//       }
+//     }
+//       // console.log("Checked 0 to " + (unsortedArr.length - 1-j)) ;
+
+//     // if (swapped === false) {
+//     //   console.log(swapped);
+//     //   break;
+//     // } else {
+//     //   console.log(swapped);
+//     // }
+
+//   }
+//   console.log(array);
+//   return array;
+// }
+
+
+function bubbleSortWhileDisplaying(array) {
+  var swapped = true;
+  for (var j = 0; swapped; j++) {
+    console.log("Pass Round # +" + j);
+    swapped = false;
+    for (var i = 0; i < (array.length - 1-j); i++) {
+      // console.log(i) ;
+      if (array[i] > array[i + 1]) {
+        [array[i], array[i + 1]] = [array[i + 1], array[i]];
+        swapped = true;
+        // console.log("wait");
+        // wait(1);
+        document.getElementById("result").textContent = i;
+
+      }
     }
+      // console.log("Checked 0 to " + (unsortedArr.length - 1-j)) ;
+
+    // if (swapped === false) {
+    //   console.log(swapped);
+    //   break;
+    // } else {
+    //   console.log(swapped);
+    // }
+
   }
-  if (swapped === false) {
-    console.log('sorted');
-    break;
-  }
+  console.log(array);
+  return array;
+}
+
+document.getElementById("start").textContent = unsortedArr;
+document.getElementById("go").onclick = function () {
+  // document.getElementById("result").textContent = bubbleSort(unsortedArr);
+  bubbleSortWhileDisplaying(unsortedArr);
 
 }
-console.log(unsortedArr);
+
+// for (var i = 0 ; i < 5 ; i++){
+//   wait(2000);
+//   console.log (i);
+// }
