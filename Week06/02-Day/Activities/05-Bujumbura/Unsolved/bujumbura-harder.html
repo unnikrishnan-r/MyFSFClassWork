@@ -19,7 +19,22 @@
     // Create an AJAX call to retrieve data Log the data in console
     // Log the data in HTML
     // Scream Ushindi (victory in Swahili)! at the top of your lungs
-  </script>
+    var queryUrl = "https://api.openweathermap.org/data/2.5/weather?q=London&appid=4c2313175a8c913d7b6ae72cd6fcbfb1"
+    fetch(queryUrl)
+      .then(function(resp) {
+        console.log("Read Completed");
+        return resp.json();
+      })
+      .then(function(data) {
+        console.log("Displaying Response of Fetch : ");
+        console.log(data);
+        // startGame(data);
+        console.log(data.wind.speed);
+        console.log(data.main.humidity);
+        console.log(data.main.temp);
+        return data;
+        
+      });  </script>
 
 </body>
 

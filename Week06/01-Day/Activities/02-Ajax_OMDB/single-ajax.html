@@ -13,16 +13,37 @@
     var title = "space+jam";
     var queryURL = "https://www.omdbapi.com/?t=" + title + "&y=&plot=short&apikey=trilogy";
 
+    var favmovie = "The+Karate+Kid";
+    queryURL = "https://www.omdbapi.com/?s=" + favmovie + "&apikey=trilogy";
+
+    var yearOfBirth = 1984;
+    queryURL = "https://www.omdbapi.com/?t=" + favmovie + "&y="+yearOfBirth+"&apikey=trilogy";
+
+    queryURL1 = "https://www.omdbapi.com/?s='hello'&y="+yearOfBirth+"&page=1&apikey=trilogy";
+
+
     $.ajax({
       url: queryURL,
       method: "GET"
     }).then(function(response) {
       console.log(queryURL);
       console.log(response);
-      console.log(response.Runtime);
-      console.log(response.imdbRating);
-      var obj =response;
-      console.log(obj);
+      // console.log(response.Runtime);
+      // console.log(response.imdbRating);
+      // var obj =response;
+      // console.log(obj);
+    });
+
+    $.ajax({
+      url: queryURL1,
+      method: "GET"
+    }).then(function(response) {
+      console.log(queryURL1);
+      console.log(response);
+      // console.log(response.Runtime);
+      // console.log(response.imdbRating);
+      // var obj =response;
+      // console.log(obj);
     });
 // ---------------------------------------------------------
 
