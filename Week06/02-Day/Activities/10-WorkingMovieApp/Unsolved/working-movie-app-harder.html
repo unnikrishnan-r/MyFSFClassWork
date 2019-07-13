@@ -40,6 +40,7 @@
 
       // displayMovieInfo function re-renders the HTML to display the appropriate content
       function displayMovieInfo() {
+        $('#movies-view').empty();
 
         var movie = $(this).attr("data-name");
         var queryURL = "https://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=trilogy";
@@ -48,11 +49,30 @@
         $.ajax({
           url: queryURL,
           method: "GET"
-        }).then(function(response) {
+        }).then(function (response) {
 
           // YOUR CODE GOES HERE!!!
+          console.log(response);
+          $('#movies-view').append($('<div>', {
+            class: "movieRatings"
+          }).text("Ratings"));
+          for (var i = 0; i < Object.keys(response.Ratings).length; i++)
+            $('.movieRatings')
+            .append($('<div>').text(response.Ratings[i].Source + " : " + response.Ratings[i].Value));
+          $('#movies-view').append($('<div>').text("Release Year : " + response.Released));
+          $('#movies-view').append($('<div>', {
+            class: "moviePoster"
+          }).text("Poster : "));
+          $('.moviePoster').append($('<img>', {
+            src: response.Poster
+          }));
+
+
+          $('#movies-view').append($('<div>').text("Plot : " + response.Plot));
+
 
         });
+
 
       }
 
@@ -62,6 +82,7 @@
         // Deletes the movies prior to adding new movies
         // (this is necessary otherwise you will have repeat buttons)
         $("#buttons-view").empty();
+
 
         // Loops through the array of movies
         for (var i = 0; i < movies.length; i++) {
@@ -81,7 +102,7 @@
       }
 
       // This function handles events where the add movie button is clicked
-      $("#add-movie").on("click", function(event) {
+      $("#add-movie").on("click", function (event) {
         event.preventDefault();
         // This line of code will grab the input from the textbox
         var movie = $("#movie-input").val().trim();

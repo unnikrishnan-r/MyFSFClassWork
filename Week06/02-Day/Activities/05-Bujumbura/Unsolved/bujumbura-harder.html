@@ -4,6 +4,11 @@
 <head>
   <meta charset="utf-8">
   <title>Bujumbura Data</title>
+
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -19,7 +24,7 @@
     // Create an AJAX call to retrieve data Log the data in console
     // Log the data in HTML
     // Scream Ushindi (victory in Swahili)! at the top of your lungs
-    var queryUrl = "https://api.openweathermap.org/data/2.5/weather?q=London&appid=4c2313175a8c913d7b6ae72cd6fcbfb1"
+    var queryUrl = "https://api.openweathermap.org/data/2.5/weather?q=Bujumbura&appid=4c2313175a8c913d7b6ae72cd6fcbfb1&units=imperial"
     fetch(queryUrl)
       .then(function(resp) {
         console.log("Read Completed");
@@ -28,7 +33,11 @@
       .then(function(data) {
         console.log("Displaying Response of Fetch : ");
         console.log(data);
-        // startGame(data);
+
+        $('.city').text("Bujumbura");
+        $('.wind').text("Wind speed in Bujumbra is :" + data.wind.speed)
+        $('.humidity').text("Humidity in Bujumbra is : " + data.main.humidity);
+        $('.temp').text("Temperature in Bujumbra is :" + data.main.temp);
         console.log(data.wind.speed);
         console.log(data.main.humidity);
         console.log(data.main.temp);

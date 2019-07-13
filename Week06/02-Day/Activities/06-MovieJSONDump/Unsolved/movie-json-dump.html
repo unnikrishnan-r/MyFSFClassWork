@@ -21,12 +21,13 @@
     </form>
 
     <!-- We'll be dumping our JSON contents in here -->
-    <div id="movie-view"></div>
+    <pre id="movie-view"></pre>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
       // This .on("click") function will trigger the AJAX Call
-      $("#find-movie").on("click", function(event) {
+      $("#find-movie").on("click", function (event) {
+        console.log("Clicked Search");
 
         // Preventing the submit button from trying to submit the form
         // We're optionally using a form so the user may hit Enter to search instead of clicking the button
@@ -37,6 +38,7 @@
 
         // Here we construct our URL
         var queryURL = "https://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=trilogy";
+        console.log(queryURL);
 
         // Write code between the dashes below to hit the queryURL with $ajax, then take the response data
         // and display it in the div with an id of movie-view
@@ -46,6 +48,14 @@
         // =================================================================
 
         // CODE GOES HERE
+        fetch(queryURL)
+          .then(function (resp) {
+            console.log("Read Completed");
+            return resp.json();
+          })
+          .then(function (data) {
+            $('#movie-view').text(JSON.stringify(data));
+          })
 
         // =================================================================
       });
