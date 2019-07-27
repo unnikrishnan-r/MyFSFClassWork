@@ -7,8 +7,12 @@
   <title>Sign-Up Today!</title>
 
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
-    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+    integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <script src="https://www.gstatic.com/firebasejs/6.3.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.0/firebase-database.js"></script>
 
 </head>
 
@@ -85,20 +89,54 @@
   <script>
     //  START CODING BELOW!!
 
+    var userObject = {};
+
     // Initialize Firebase
+    var firebaseConfig = {
+      apiKey: "AIzaSyClekzQuhpBEf71a_YISF7hn8uTlwavTd4",
+      authDomain: "my-first-firebase-projec-3eec5.firebaseapp.com",
+      databaseURL: "https://my-first-firebase-projec-3eec5.firebaseio.com",
+      projectId: "my-first-firebase-projec-3eec5",
+      storageBucket: "",
+      messagingSenderId: "291710796124",
+      appId: "1:291710796124:web:e5f11a091fc8d287"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    // Create a variable to reference the database
 
 
     // Create a variable to reference the database
 
+    var database = firebase.database();
 
     // Capture Button Click
-    $("#add-user").on("click", function(event) {
+    $("#add-user").on("click", function (event) {
       // Don't refresh the page!
       event.preventDefault();
 
       // YOUR TASK!!!
+      console.log($('#name-input').val());
 
       // Code in the logic for storing and retrieving the most recent user.
+      database.ref().push().set({
+        userName: $('#name-input').val(),
+        userEmail: $('#email-input').val(),
+        userAge: $('#age-input').val(),
+        userComment: $('#comment-input').val()
+      });
+      userObject = database.ref().on('child_added' ,function (snapshot) {
+
+        userObject = snapshot.val();
+        console.log(userObject.userName)
+        $('#name-display').text(userObject.userName);
+        $('#email-display').text(userObject.userEmail);
+        $('#age-display').text(userObject.userAge);
+        $('#comment-display').text(userObject.userComment);
+
+
+
+      });
 
       // Don't forget to provide initial data to your Firebase database.
 
@@ -106,10 +144,25 @@
 
 
     // Firebase watcher + initial loader HINT: .on("value")
+    userObject = database.ref().limitToLast(1).once('value').then(function(snapshot){
+      userObject = snapshot.val();
+console.log(Object.keys(userObject).toString())
+var keyId = Object.keys(userObject).toString();
+console.log(userObject.keyId)
+$('#name-display').text(userObject.keyId.userName);
+$('#email-display').text(userObject.userEmail);
+$('#age-display').text(userObject.userAge);
+$('#comment-display').text(userObject.userComment);
+
+    })
+
+
+
+
+
 
 
     // Create Error Handling
-
   </script>
 
 </body>
