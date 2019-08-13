@@ -35,7 +35,7 @@ fs.readFile("written.txt", "utf8", function(err, data) {
 
   });
   // second number should be 0 here
-  console.log(secondNumber);
+  console.log("SN" + secondNumber);
 });
 // number should be 0 here
-console.log(number);
+console.log("NBR"+number);

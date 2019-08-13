@@ -14,7 +14,7 @@ fs.readFile("written.txt", "utf8", function(err, data) {
     return console.log(err);
   }
   // number should still be 0 here
-  console.log(number);
+  console.log("ABC"+number);
   var secondNumber = 0;
   // Inside of the readFile callback, we use the appendFileSync function. This version of appendFile is synchronous
   // The first parameter is the name of the text file to save to
@@ -28,7 +28,7 @@ fs.readFile("written.txt", "utf8", function(err, data) {
   // because no error was encountered, or we would have returned above
   console.log("SAVED");
   // secondNumber should be 2 here
-  console.log(secondNumber);
+  console.log("SN" + secondNumber);
 });
 // number is still 0 here
-console.log("number", number);
+console.log("NBR"+number);
