@@ -1,0 +1,23 @@
+
+1. Create a Database ==> Wajiha
+2. Create a table : products
+    > id
+    > product name
+    > current highest bid
+    > person id
+
+
+2. Posting an Item: function - with insert query ==>  Jatinder
+
+3. Bid for an item: function (product id and accepts bid amount) ==> Unni
+    reads the table to get the current highest bid
+    if current higher bid > users bid   
+         failure, try again
+    else
+        update the tables
+        show success
+
+
+4. Inquirer == Christine
+    
+-Get user input and call the functions
