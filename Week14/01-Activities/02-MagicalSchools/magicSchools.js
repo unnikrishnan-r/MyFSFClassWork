@@ -14,10 +14,11 @@ var connection = mysql.createConnection({
   host: "localhost",
   port: 3306,
   user: "root",
-  password: "",
+  password: "password",
   database: "wizard_schools_db"
 });
 
+console.clear();
 // Initiate MySQL Connection.
 connection.connect(function(err) {
   if (err) {
