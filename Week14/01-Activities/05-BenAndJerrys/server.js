@@ -11,7 +11,7 @@ var PORT = process.env.PORT || 8080;
 
 // Set Handlebars as the default templating engine.
 app.engine("handlebars", exphbs({
-    defaultLayout: "main"
+    defaultLayout: "abcd"
 }));
 app.set("view engine", "handlebars");
 
@@ -66,7 +66,8 @@ app.get("/icecream/:name", function (req, res) {
             res.render("single-icecream", {
                 name: element.name,
                 price: element.price,
-                awesomeness: element.awesomeness
+                awesomeness: element.awesomeness,
+                icecreamList: element
             })
         }
     });
