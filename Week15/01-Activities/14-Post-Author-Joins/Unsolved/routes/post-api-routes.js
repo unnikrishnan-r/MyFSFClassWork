@@ -30,6 +30,7 @@ module.exports = function(app) {
   app.get("/api/posts/:id", function(req, res) {
     // 2. Add a join here to include the Author who wrote the Post
     db.Post.findOne({
+      include: [{db:Author}],
       where: {
         id: req.params.id
       }
