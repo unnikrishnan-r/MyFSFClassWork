@@ -1,4 +1,5 @@
 // 1.
+console.clear();
 console.log(true || false);
 console.log(true && false);
 console.log(0 && "lol");
@@ -7,7 +8,7 @@ console.log(false || "IDK MY BFF JILL");
 // 2.
 console.log("" && [].length);
 console.log("" || [].length);
-console.log("" || [].length || 0);
+console.log("" || [].length || 1);
 
 
 // 3.

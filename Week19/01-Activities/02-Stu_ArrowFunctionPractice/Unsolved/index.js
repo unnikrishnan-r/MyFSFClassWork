@@ -1,5 +1,5 @@
 // 1. funnyCase makes each letter in a string the opposite case as the one before
-var funnyCase = function(string) {
+var funnyCase = (string) =>{
   var newString = "";
   for (var i = 0; i < string.length; i++) {
     if (i % 2 === 0) newString += string[i].toLowerCase();
@@ -14,7 +14,7 @@ console.log(funnyCase("You can't just do whatever you want all the time!"));
 // --------------------------------------------------------------------------
 
 // 2. Map lets you loop over an array and modify the elements inside
-var map = function(arr, cb) {
+var map = (arr, cb) =>{
   var result = [];
   for (var index = 0; index < arr.length; index++) {
     var currentElement = arr[index];
@@ -25,9 +25,7 @@ var map = function(arr, cb) {
 
 var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-var doubled = map(numbers, function(element) {
-  return element * 2;
-});
+var doubled = map(numbers, element =>{return element * 2});
 
 // Prints `[ 2, 4, 6, 8, 10, 12, 14, 16, 18, 20 ]`
 console.log(doubled);
@@ -35,7 +33,7 @@ console.log(doubled);
 // --------------------------------------------------------------------------
 
 // 3. filter lets you loop over an array and remove elements
-var filter = function(arr, cb) {
+var filter = (arr, cb) =>{
   var result = [];
   for (var index = 0; index < arr.length; index++) {
     var currentElement = arr[index];
@@ -46,9 +44,7 @@ var filter = function(arr, cb) {
   return result;
 };
 
-var evenNumbers = filter(numbers, function(currentElement) {
-  return currentElement % 2 === 0;
-});
+var evenNumbers = filter(numbers, currentElement =>  currentElement % 2 === 0);
 
 // Prints `[ 2, 4, 6, 8, 10 ]`
 console.log(evenNumbers);
@@ -56,6 +52,8 @@ console.log(evenNumbers);
 // --------------------------------------------------------------------------
 
 // 4. netflixQueue is an object for managing your netflix queue
+this.queue = "abc";
+console.log(this);
 var netflixQueue = {
   queue: [
     "Mr. Nobody",
@@ -69,7 +67,7 @@ var netflixQueue = {
   addMovie: function(movie) {
     this.queue.unshift(movie);
   },
-  printQueue: function() {
+  printQueue: ()=> {
     var list = "";
     for (var i = this.queue.length - 1; i >= 0; i--) {
       var currentMovie = this.queue[i];
